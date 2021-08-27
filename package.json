@@ -1,0 +1,31 @@
+{
+  "name": "bobur.me",
+  "version": "1.0.0",
+  "description": "Bobur designer's website",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mutovvir/bobur.me.git"
+  },
+  "author": "@mutovvir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mutovvir/bobur.me/issues"
+  },
+  "homepage": "https://github.com/mutovvir/bobur.me#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
