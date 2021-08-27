@@ -1,15 +1,6 @@
 import jsonwebtoken from 'jsonwebtoken'
-const secretKey = process.env.SECRET_KEY
 
-const verify = async (token, options) => {
-  return jsonwebtoken.verify(token, secretKey, options)
-}
+const verify = async (token, options) => jsonwebtoken.verify(token, process.env.SECRET_KEY, options)
+const sign = async (token, options) => jsonwebtoken.sign(token, process.env.SECRET_KEY, options)
 
-const sign = async (token, options) => {
-  return jsonwebtoken.sign(token, secretKey, options)
-}
-
-module.exports = {
-  verify: verify,
-  sign: sign
-}
+export default { verify, sign }
