@@ -1,7 +1,9 @@
-import { Pool } from ("pg")
-import { DATABASE } from ('../../config.js')
+import pg from "pg"
+// const { Pool } = require("pg")
+import config from '../../config.js'
 
-const pool = new Pool(DATABASE)
+const Pool = pg.Pool
+const pool = new Pool(config.DATABASE)
 
 pool.connect((err, c) => {
   if (err) console.log(err)
@@ -31,5 +33,4 @@ const fetchOne = async (SQL, ...params) => {
   }
 }
 
-module.exports.fetch = fetch
-module.exports.fetchOne = fetchOne
+export { fetch, fetchOne }

@@ -1,2 +1,1 @@
-# bobur.me
 # express-mvc
