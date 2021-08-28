@@ -1,18 +1,15 @@
 import pg from "pg"
-// const { Pool } = require("pg")
 import config from '../../config.js'
 
-const Pool = pg.Pool
-const pool = new Pool(config.DATABASE)
+const pool = new pg.Pool(config.DATABASE)
 
 pool.connect((err, c) => {
   if (err) console.log(err)
 })
 
 const fetch = async (SQL, ...params) => {
-  const client = await pool.connect()
-
   try {
+    const client = await pool.connect()
     const { rows } = await client.query(SQL, params)
 
     return rows
@@ -22,9 +19,8 @@ const fetch = async (SQL, ...params) => {
 }
 
 const fetchOne = async (SQL, ...params) => {
-  const client = await pool.connect()
-
-  try {
+   try {
+    const client = await pool.connect()
     const { rows: [row] } = await client.query(SQL, params)
 
     return row

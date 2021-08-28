@@ -1,3 +1,4 @@
+"use strict"
 import dotenv from "dotenv"
 import express from "express"
 import http from "http"
@@ -8,6 +9,7 @@ const port = process.env.PORT || 1111
 
 // ROUTES
 app.use(express.json())
+app.get('/', (__, res) => res.send('Hello, Server!'))
 app.get('*', (__, res) => res.redirect('/'))
 
 http.createServer(app).listen(port, () => console.log('listening on port http://localhost:' + port))
