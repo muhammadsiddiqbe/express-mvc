@@ -8,8 +8,9 @@ pool.connect((err, c) => {
 })
 
 const fetch = async (SQL, ...params) => {
+  const client = await pool.connect()
+
   try {
-    const client = await pool.connect()
     const { rows } = await client.query(SQL, params)
 
     return rows
@@ -19,8 +20,9 @@ const fetch = async (SQL, ...params) => {
 }
 
 const fetchOne = async (SQL, ...params) => {
-   try {
-    const client = await pool.connect()
+  const client = await pool.connect()
+
+  try {
     const { rows: [row] } = await client.query(SQL, params)
 
     return row
