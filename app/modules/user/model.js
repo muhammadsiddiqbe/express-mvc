@@ -1,9 +1,9 @@
 import { fetch } from '../../functions/pgpool.js'
 
 const getUsers = async (req, res) => {
-  const users = await fetch()
+  // const users = await fetch('SELECT * FROM ')
 
-  res.send('user')
+  res.send('users')
 }
 
 export default {
