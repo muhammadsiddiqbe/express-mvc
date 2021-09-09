@@ -9,5 +9,5 @@ const port = process.env.PORT || 1111
 // ROUTES
 app.get('/', (__, res) => res.send('Hello, Server!'))
 app.get('*', (__, res) => res.redirect('/'))
-
+// SERVER
 http.createServer(app).listen(port, () => console.log('http://localhost:' + port))
